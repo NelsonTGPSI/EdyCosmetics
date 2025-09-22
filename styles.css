@@ -239,7 +239,6 @@ footer {
     .hero::after {
         display: none; /* Esconde logo decorativo no mobile */
     }
-
 }
 @media (max-width: 600px) {
     header {
@@ -258,8 +257,13 @@ footer {
         padding: 0;
         margin: 0;
     }
+    nav ul li {
+        margin: 0;
+        padding: 0;
+    }
     nav ul li a {
         font-size: 0.95rem;
         padding: 4px 8px;
+        display: inline-block;
     }
 }

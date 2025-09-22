@@ -239,4 +239,22 @@ footer {
     .hero::after {
         display: none; /* Esconde logo decorativo no mobile */
     }
+
+}
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5px;
+    }
+    .logo {
+        margin-bottom: 6px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
 }

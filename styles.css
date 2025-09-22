@@ -1,0 +1,242 @@
+/* Fonte elegante */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdfcfb;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #bfa16e;
+}
+
+/* Hero Banner */
+.hero {
+    position: relative;
+    background: url('assets/imgs/LOGO.jpg') center/cover no-repeat;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45); /* overlay escuro */
+    z-index: 1;
+}
+/* Logo decorativo só no desktop */
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: url('assets/imgs/LOGO.jpg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.18;
+    z-index: 2;
+    pointer-events: none;
+}
+.hero-text {
+    position: relative;
+    z-index: 3;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+.hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.btn-hero {
+    background-color: #bfa16e;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-hero:hover {
+    background-color: #a8864d;
+}
+
+/* Seções de produtos */
+.section-produtos {
+    padding: 60px 20px;
+}
+.section-produtos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+}
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.produto {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.produto img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.produto h3 {
+    margin: 15px 0 10px 0;
+    font-size: 1.4rem;
+    color: #222;
+}
+.produto p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contato */
+.section-contato {
+    padding: 60px 20px;
+    text-align: center;
+}
+.whatsapp-button {
+    display: inline-block;
+    background-color: #bfa16e;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    margin: 15px 0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.whatsapp-button:hover {
+    background-color: #a8864d;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        text-align: center;
+    }
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        height: 320px;
+    }
+    .hero-text h2 {
+        font-size: 2.1rem;
+    }
+    .section-produtos {
+        padding: 40px 10px;
+    }
+    .grid-produtos {
+        gap: 18px;
+    }
+    .hero::after {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 220px;
+        padding: 0 10px;
+    }
+    .hero-text h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .hero-text p {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    .btn-hero {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+    .grid-produtos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .produto img {
+        max-height: 180px;
+        object-fit: cover;
+    }
+    .section-produtos h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    footer {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+    .hero::after {
+        display: none; /* Esconde logo decorativo no mobile */
+    }
+}
